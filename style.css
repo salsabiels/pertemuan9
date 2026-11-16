@@ -1,0 +1,479 @@
+/* ==========================================================================
+style.css — Praktik CSS Layout: Web Page Layout (Pertemuan 9)
+Digunakan oleh: index.html, content.html, detail.html, dan contact.html
+========================================================================== */
+
+/* 1. BOX MODEL & RESET DASAR */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #333333;
+    background-color: #f4f6f9;
+    line-height: 1.6;
+}
+
+img,
+svg {
+    display: block;
+    max-width: 100%;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* 2. CONTAINER (Mengontrol lebar maksimal pada layar lebar) */
+.container {
+    width: min(100% - 40px, 1200px);
+    margin-inline: auto;
+}
+
+/* 3. HEADER DENGAN FLEXBOX */
+.site-header {
+    background-color: #0f2942;
+    color: #ffffff;
+    padding: 20px 0;
+}
+
+.header-inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+}
+
+.brand-group {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+}
+
+.brand-logo {
+    width: 44px;
+    height: 44px;
+    background-color: #2563eb;
+    color: #ffffff;
+    font-weight: bold;
+    font-size: 18px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.site-title {
+    margin: 0;
+    font-size: 22px;
+}
+
+.site-tagline {
+    margin: 2px 0 0;
+    font-size: 13px;
+    color: #cbd5e1;
+}
+
+.header-badge {
+    background-color: rgba(255, 255, 255, 0.14);
+    padding: 6px 14px;
+    border-radius: 999px;
+    font-size: 13px;
+    font-weight: bold;
+}
+
+/* 4. NAVIGATION DENGAN FLEXBOX */
+.site-nav {
+    background-color: #ffffff;
+    border-bottom: 1px solid #dce1e7;
+    padding: 12px 0;
+}
+
+.nav-inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+}
+
+nav {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+
+nav a {
+    padding: 8px 14px;
+    border-radius: 6px;
+    font-size: 14px;
+    font-weight: bold;
+    color: #475569;
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+nav a:hover {
+    background-color: #eff6ff;
+    color: #1d4ed8;
+}
+
+nav a.active {
+    background-color: #1d4ed8;
+    color: #ffffff;
+}
+
+/* 5. HERO SECTION (Container, Spacing & Position) */
+.hero-section {
+    padding: 28px 0 12px;
+}
+
+.hero-box {
+    position: relative;
+    background: linear-gradient(135deg, #0f2942, #1e40af);
+    color: #ffffff;
+    padding: 40px;
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+.hero-box.hero-compact {
+    padding: 28px 36px;
+}
+
+.hero-label {
+    display: inline-block;
+    background-color: rgba(255, 255, 255, 0.18);
+    color: #fde68a;
+    font-size: 12px;
+    font-weight: bold;
+    text-transform: uppercase;
+    padding: 4px 12px;
+    border-radius: 999px;
+    margin-bottom: 12px;
+}
+
+.hero-box h2 {
+    margin: 0 0 10px;
+    font-size: 28px;
+    line-height: 1.25;
+}
+
+.hero-box p {
+    margin: 0 0 20px;
+    max-width: 650px;
+    color: #e2e8f0;
+    font-size: 15px;
+}
+
+.hero-box.hero-compact p {
+    margin-bottom: 0;
+}
+
+/* Contoh Position: Absolute pada Hero */
+.hero-corner-tag {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background-color: #10b981;
+    color: #ffffff;
+    font-size: 12px;
+    font-weight: bold;
+    padding: 6px 14px;
+    border-radius: 999px;
+}
+
+.btn-primary {
+    display: inline-block;
+    background-color: #d97706;
+    color: #ffffff;
+    padding: 10px 20px;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+}
+
+.btn-primary:hover {
+    background-color: #b45309;
+}
+
+/* 6. MAIN CONTENT + ASIDE MENGGUNAKAN CSS GRID */
+.main-section {
+    padding: 24px 0 48px;
+}
+
+.content-layout {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 30px;
+    align-items: start;
+}
+
+.section-heading {
+    margin: 0 0 6px;
+    font-size: 22px;
+    color: #0f2942;
+}
+
+.section-sub {
+    margin: 0 0 20px;
+    font-size: 14px;
+    color: #64748b;
+}
+
+.section-gap {
+    margin-top: 22px;
+    margin-bottom: 22px;
+}
+
+/* 7. CARDS GRID (3 Columns di Desktop dengan gap: 20px) */
+.cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.card {
+    position: relative;
+    /* Referensi posisi untuk .badge-new */
+    background-color: #ffffff;
+    padding: 20px;
+    border: 1px solid #dddddd;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+/* 8. POSITION: ABSOLUTE UNTUK BADGE 'NEW' PADA CARD */
+.badge-new {
+    position: absolute;
+    top: 14px;
+    right: 14px;
+    background-color: #ef4444;
+    color: #ffffff;
+    font-size: 11px;
+    font-weight: bold;
+    text-transform: uppercase;
+    padding: 4px 10px;
+    border-radius: 999px;
+}
+
+.card-tag {
+    font-size: 12px;
+    font-weight: bold;
+    color: #1d4ed8;
+    text-transform: uppercase;
+    margin-bottom: 6px;
+}
+
+.card h3 {
+    margin: 0 0 8px;
+    font-size: 17px;
+    color: #0f2942;
+}
+
+.card p {
+    margin: 0 0 16px;
+    font-size: 14px;
+    color: #475569;
+    flex-grow: 1;
+}
+
+.card-footer {
+    padding-top: 12px;
+    border-top: 1px solid #eef2f6;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 13px;
+    color: #64748b;
+}
+
+.card-link {
+    color: #1d4ed8;
+    font-weight: bold;
+}
+
+.card-link:hover {
+    text-decoration: underline;
+}
+
+/* Panel Artikel / Detail / Form di Main Content */
+.content-panel {
+    background-color: #ffffff;
+    border: 1px solid #dddddd;
+    border-radius: 10px;
+    padding: 24px;
+    margin-top: 24px;
+}
+
+.content-panel.no-top {
+    margin-top: 0;
+}
+
+.content-panel h3 {
+    margin: 0 0 10px;
+    color: #0f2942;
+}
+
+.action-row {
+    margin-top: 20px;
+}
+
+/* Styling Tabel Jadwal di detail.html */
+.schedule-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 16px 0;
+    font-size: 14px;
+}
+
+.schedule-table th,
+.schedule-table td {
+    border: 1px solid #dce1e7;
+    padding: 10px 12px;
+    text-align: left;
+}
+
+.schedule-table th {
+    background-color: #eff6ff;
+    color: #0f2942;
+}
+
+/* Styling Form di contact.html */
+.form-intro {
+    font-size: 14px;
+    color: #64748b;
+    margin-bottom: 18px;
+}
+
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+.form-group label {
+    display: block;
+    font-size: 14px;
+    font-weight: bold;
+    margin-bottom: 6px;
+    color: #0f2942;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    padding: 10px 12px;
+    border: 1px solid #cbd5e1;
+    border-radius: 8px;
+    font-family: inherit;
+    font-size: 14px;
+}
+
+/* 9. ASIDE / SIDEBAR */
+.sidebar {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.widget {
+    background-color: #ffffff;
+    padding: 20px;
+    border: 1px solid #dddddd;
+    border-radius: 10px;
+}
+
+.widget h3 {
+    margin: 0 0 14px;
+    font-size: 17px;
+    color: #0f2942;
+    padding-bottom: 8px;
+    border-bottom: 2px solid #eff6ff;
+}
+
+.widget-text {
+    margin: 0;
+    font-size: 14px;
+    color: #475569;
+}
+
+.widget-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    font-size: 14px;
+}
+
+.widget-list li {
+    padding-bottom: 10px;
+    border-bottom: 1px solid #f1f5f9;
+}
+
+.widget-list li:last-child {
+    padding-bottom: 0;
+    border-bottom: none;
+}
+
+/* 10. FOOTER */
+.site-footer {
+    background-color: #0f2942;
+    color: #cbd5e1;
+    padding: 28px 0;
+    border-top: 4px solid #d97706;
+    font-size: 14px;
+}
+
+.footer-inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 16px;
+}
+
+/* 11. RESPONSIVE MEDIA QUERIES (Tablet & Mobile) */
+@media (max-width: 900px) {
+    .content-layout {
+        grid-template-columns: 1fr;
+    }
+
+    .cards {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 600px) {
+
+    .header-inner,
+    .nav-inner {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    nav {
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+
+    .cards {
+        grid-template-columns: 1fr;
+    }
+
+    .hero-corner-tag {
+        position: static;
+        display: inline-block;
+        margin-bottom: 12px;
+    }
+}

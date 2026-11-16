@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Beranda — Campus Life Universitas Nusantara</title>
+    <!-- Menghubungkan ke file CSS eksternal -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- 1. HEADER (Menggunakan Flexbox) -->
+    <header class="site-header">
+        <div class="container header-inner">
+            <div class="brand-group">
+                <div class="brand-logo" aria-hidden="true">CL</div>
+                <div>
+                    <h1 class="site-title">Campus Life — Universitas Nusantara</h1>
+                    <p class="site-tagline">Portal Kehidupan Kampus, Unit Kegiatan Mahasiswa &amp; Fasilitas</p>
+                </div>
+            </div>
+            <span class="header-badge">Semester Ganjil 2026/2027</span>
+        </div>
+    </header>
+
+    <!-- 2. NAVIGATION (Menggunakan Flexbox dengan gap: 20px) -->
+    <div class="site-nav">
+        <div class="container nav-inner">
+            <nav aria-label="Navigasi Utama">
+                <a href="index.html" class="active">Beranda</a>
+                <a href="content.html">Kegiatan &amp; UKM</a>
+                <a href="detail.html">Detail Program</a>
+                <a href="contact.html">Kontak</a>
+            </nav>
+            <a href="contact.html" class="btn-primary">Daftar UKM</a>
+        </div>
+    </div>
+
+    <!-- 3. HERO SECTION (Container, Spacing & Position) -->
+    <section class="hero-section">
+        <div class="container">
+            <div class="hero-box">
+                <span class="hero-corner-tag">Open Recruitment 2026</span>
+                <span class="hero-label">Selamat Datang Mahasiswa</span>
+                <h2>Kembangkan Potensi Akademik &amp; Kreativitas di Lingkungan Kampus</h2>
+                <p>
+                    Jelajahi berbagai Unit Kegiatan Mahasiswa (UKM), fasilitas riset modern, komunitas seni budaya,
+                    serta kegiatan olahraga untuk membangun pengalaman kuliah yang bermakna.
+                </p>
+                <a href="content.html" class="btn-primary">Lihat Semua Kegiatan</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- 4. MAIN CONTENT + ASIDE (Menggunakan CSS Grid 2fr 1fr) -->
+    <div class="main-section">
+        <div class="container content-layout">
+
+            <!-- Kolom Kiri: Main Content -->
+            <main>
+                <h2 class="section-heading">Sorotan Kehidupan Kampus</h2>
+                <p class="section-sub">Program dan fasilitas unggulan yang paling diminati mahasiswa tahun ini.</p>
+
+                <!-- Cards Grid (3 Columns di Desktop dengan gap: 20px) -->
+                <section class="cards" aria-label="Sorotan UKM dan Fasilitas">
+                    <article class="card">
+                        <!-- Badge dengan position: absolute -->
+                        <span class="badge-new">New</span>
+                        <div>
+                            <div class="card-tag">Teknologi &amp; Riset</div>
+                            <h3>UKM Robotika &amp; AI</h3>
+                            <p>Riset sistem otonom, mikrokontroler, Internet of Things, dan persiapan Kontes Robot
+                                Indonesia.</p>
+                        </div>
+                        <div class="card-footer">
+                            <span>Lab Gedung C</span>
+                            <a href="detail.html" class="card-link">Detail &rarr;</a>
+                        </div>
+                    </article>
+
+                    <article class="card">
+                        <div>
+                            <div class="card-tag">Seni &amp; Budaya</div>
+                            <h3>Paduan Suara &amp; Orkestra</h3>
+                            <p>Wadah pengembangan bakat musik, olah vokal, dan pertunjukan seni dalam festival kampus
+                                tahunan.</p>
+                        </div>
+                        <div class="card-footer">
+                            <span>Auditorium Utama</span>
+                            <a href="detail.html" class="card-link">Detail &rarr;</a>
+                        </div>
+                    </article>
+
+                    <article class="card">
+                        <span class="badge-new">New</span>
+                        <div>
+                            <div class="card-tag">Fasilitas Akademik</div>
+                            <h3>Perpustakaan Digital 24/7</h3>
+                            <p>Ruang belajar kolaboratif modern dengan akses ribuan jurnal ilmiah internasional dan
+                                bilik diskusi.</p>
+                        </div>
+                        <div class="card-footer">
+                            <span>Gedung Perpustakaan</span>
+                            <a href="detail.html" class="card-link">Detail &rarr;</a>
+                        </div>
+                    </article>
+                </section>
+
+                <!-- Artikel Pengantar -->
+                <article class="content-panel">
+                    <h3>Pekan Orientasi &amp; Expo UKM Nusantara 2026</h3>
+                    <p>
+                        Seluruh organisasi mahasiswa membuka stan informasi interaktif di Plaza Utama kampus. Mahasiswa
+                        baru dapat berkonsultasi langsung dengan pengurus UKM, menyaksikan demonstrasi karya, dan
+                        mendaftarkan diri sesuai minat masing-masing.
+                    </p>
+                </article>
+            </main>
+
+            <!-- Kolom Kanan: Aside / Sidebar -->
+            <aside class="sidebar">
+                <div class="widget">
+                    <h3>Agenda Kampus Terdekat</h3>
+                    <ul class="widget-list">
+                        <li>
+                            <strong>20 November 2026</strong><br>
+                            Seminar Nasional Web Design &amp; UI/UX
+                        </li>
+                        <li>
+                            <strong>24 November 2026</strong><br>
+                            Expo UKM &amp; Pameran Inovasi Mahasiswa
+                        </li>
+                        <li>
+                            <strong>02 Desember 2026</strong><br>
+                            Turnamen Futsal &amp; Basket Rektor Cup
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="widget">
+                    <h3>Info Layanan Kampus</h3>
+                    <p class="widget-text">
+                        Biro Kemahasiswaan buka setiap Senin – Jumat pukul 08.00 s.d. 16.00 WIB di Gedung Rektorat
+                        Lantai 2.
+                    </p>
+                </div>
+            </aside>
+
+        </div>
+    </div>
+
+    <!-- 5. FOOTER -->
+    <footer class="site-footer">
+        <div class="container footer-inner">
+            <span>&copy; 2026 Campus Life — Universitas Nusantara.</span>
+            <span>Praktik Web Design Pertemuan 9 (CSS Layout)</span>
+        </div>
+    </footer>
+
+</body>
+
+</html>
